@@ -5,6 +5,8 @@ import banners from "@/static/aboutBanners";
 import Banner from "@/components/Banner";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
+import aboutNumbers from "@/static/aboutNumbers";
+import BusinessNumbers from "@/components/BussinessNumbers";
 
 const About: FC = () => {
   return (
@@ -46,34 +48,13 @@ const About: FC = () => {
         </div>
       </section>
 
-      <section className="flex flex-col items-center bg-synconaltdDarkGreen gap-12 md:gap-28 py-20 md:px-32 bg-[url('/background-aboutus.svg')] bg-cover">
-        <div className="text-white">
-          <h3 className="text-center text-xl md:text-2xl">
-            OUR BUSINESS IN NUMBERS
-          </h3>
-          <p className="text-center text-sm md:text-base">
-            Unless stated all finance at 30 June 2024
-          </p>
-        </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-10 md:gap-x-16 gap-y-20 text-white w-[90%] md:w-full">
-          {[
-            { title: "13", subtitle: "Portfolio companies" },
-            { title: "£739m", subtitle: "Value of life science portfolio" },
-            { title: "£421m", subtitle: "Capital pool" },
-            { title: "37", subtitle: "Members of the team" },
-            { title: "92%", subtitle: "Investment team with PhDs" },
-            { title: "23", subtitle: "Portfolio company Board seats" },
-          ].map((item, index) => (
-            <div key={index} className="space-y-5">
-              <h1 className="text-7xl md:text-9xl bg-gradient-to-b from-[#00C3BF] to-[#00B1DF] bg-clip-text text-transparent">
-                {item.title}
-              </h1>
-              <hr className="border-t-2 border-white" />
-              <h3 className="text-lg md:text-xl">{item.subtitle}</h3>
-            </div>
-          ))}
-        </div>
-      </section>
+      <BusinessNumbers
+        title="OUR BUSINESS IN NUMBERS"
+        subtitle="Unless stated all finance at 30 June 2024"
+        items={aboutNumbers}
+        textColor="bg-gradient-to-b from-[#00C3BF] to-[#00B1DF] bg-clip-text text-transparent"
+        background="bg-synconaltdDarkGreen bg-[url('/background-aboutus.svg')] bg-cover"
+      ></BusinessNumbers>
 
       <section>
         {banners.map((banner, index) => {
