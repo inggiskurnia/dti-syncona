@@ -5,21 +5,13 @@ import Image from "next/image";
 import banners from "@/static/aboutBanners";
 import Banner from "@/components/Banner";
 import Footer from "@/components/Footer";
+import Hero from "@/components/Hero";
 
 const About: FC = () => {
   return (
     <>
       <Navbar />
-      <section className="relative w-full">
-        <Image
-          src={aboutUs}
-          className="object-cover h-96 w-full"
-          alt="about-us"
-        />
-        <h1 className="absolute text-white text-5xl font-bold bottom-[30%] left-[10%]">
-          About Us
-        </h1>
-      </section>
+      <Hero desc="About Us" image={aboutUs}></Hero>
 
       <section className="flex bg-synconaltdLightGray py-20 justify-center">
         <div className="grid grid-cols-2 w-[70%] gap-20">
