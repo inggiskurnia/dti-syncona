@@ -10,15 +10,15 @@ const About: FC = () => {
   return (
     <>
       <Navbar />
-      <Hero desc="About Us" image={aboutUs}></Hero>
+      <Hero desc="About Us" image={aboutUs} />
 
-      <section className="py-20 px-40 flex justify-center">
-        <div className="w-[50%] space-y-10">
-          <h1 className="text-4xl text-center">
+      <section className="py-20 px-5 md:px-40 flex justify-center">
+        <div className="w-full md:w-[50%] space-y-10">
+          <h1 className="text-3xl md:text-4xl text-center">
             Pioneering Life Science Investment for Long-Term Growth and Patient
             Impact
           </h1>
-          <h2 className="text-xl text-center">
+          <h2 className="text-base md:text-xl text-center">
             Syncona is a leading life science investor with a strong balance
             sheet and clear strategy for growth and patient impact. The core
             premise of our investment strategy is that significant risk-adjusted
@@ -31,11 +31,11 @@ const About: FC = () => {
       </section>
 
       <section className="flex bg-synconaltdLightGray py-20 justify-center">
-        <div className="grid grid-cols-2 w-[70%] gap-20">
-          <h2 className="text-2xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 w-[90%] md:w-[70%] gap-10">
+          <h2 className="text-xl md:text-2xl text-center">
             We invest to extend and enhance human life
           </h2>
-          <p className="text-lg">
+          <p className="text-base md:text-lg text-center">
             We aim to build and maintain a diversified portfolio of 20-25
             globally leading life science businesses, across development stage,
             modality and therapeutic area, for the benefit of all our
@@ -46,56 +46,32 @@ const About: FC = () => {
         </div>
       </section>
 
-      <section className="flex flex-col items-center bg-synconaltdDarkGreen gap-28 py-20 bg-[url('/background-aboutus.svg')] bg-cover">
+      <section className="flex flex-col items-center bg-synconaltdDarkGreen gap-12 md:gap-28 py-20 md:px-32 bg-[url('/background-aboutus.svg')] bg-cover">
         <div className="text-white">
-          <h3 className="text-center">OUR BUSSINESS IN NUMBERS</h3>
-          <p className="text-center">
-            Unless stated all finnance at 30 June 2024
+          <h3 className="text-center text-xl md:text-2xl">
+            OUR BUSINESS IN NUMBERS
+          </h3>
+          <p className="text-center text-sm md:text-base">
+            Unless stated all finance at 30 June 2024
           </p>
         </div>
-        <div className="grid grid-cols-3 gap-x-16 gap-y-20 text-white">
-          <div className="space-y-7">
-            <h1 className="text-9xl bg-gradient-to-b from-[#00C3BF] to-[#00B1DF] bg-clip-text text-transparent">
-              13
-            </h1>
-            <hr className="border-t-2 border-white"></hr>
-            <h3 className="text-xl">Portfolio companies</h3>
-          </div>
-          <div className="space-y-7">
-            <h1 className="text-9xl bg-gradient-to-b from-[#00C3BF] to-[#00B1DF] bg-clip-text text-transparent">
-              £739m
-            </h1>
-            <hr className="border-t-2 border-white"></hr>
-            <h3 className="text-xl">Value of life science portfolio</h3>
-          </div>
-          <div className="space-y-7">
-            <h1 className="text-9xl bg-gradient-to-b from-[#00C3BF] to-[#00B1DF] bg-clip-text text-transparent">
-              £421m
-            </h1>
-            <hr className="border-t-2 border-white"></hr>
-            <h3 className="text-xl">Capital pool</h3>
-          </div>
-          <div className="space-y-7">
-            <h1 className="text-9xl bg-gradient-to-b from-[#00C3BF] to-[#00B1DF] bg-clip-text text-transparent">
-              37
-            </h1>
-            <hr className="border-t-2 border-white"></hr>
-            <h3 className="text-xl">Members of the team</h3>
-          </div>
-          <div className="space-y-7">
-            <h1 className="text-9xl bg-gradient-to-b from-[#00C3BF] to-[#00B1DF] bg-clip-text text-transparent">
-              92%
-            </h1>
-            <hr className="border-t-2 border-white"></hr>
-            <h3 className="text-xl">Investment team with PhDs</h3>
-          </div>
-          <div className="space-y-7">
-            <h1 className="text-9xl bg-gradient-to-b from-[#00C3BF] to-[#00B1DF] bg-clip-text text-transparent">
-              23
-            </h1>
-            <hr className="border-t-2 border-white"></hr>
-            <h3 className="text-xl">Portfolio company Board seats</h3>
-          </div>
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-10 md:gap-x-16 gap-y-20 text-white w-[90%] md:w-full">
+          {[
+            { title: "13", subtitle: "Portfolio companies" },
+            { title: "£739m", subtitle: "Value of life science portfolio" },
+            { title: "£421m", subtitle: "Capital pool" },
+            { title: "37", subtitle: "Members of the team" },
+            { title: "92%", subtitle: "Investment team with PhDs" },
+            { title: "23", subtitle: "Portfolio company Board seats" },
+          ].map((item, index) => (
+            <div key={index} className="space-y-5">
+              <h1 className="text-7xl md:text-9xl bg-gradient-to-b from-[#00C3BF] to-[#00B1DF] bg-clip-text text-transparent">
+                {item.title}
+              </h1>
+              <hr className="border-t-2 border-white" />
+              <h3 className="text-lg md:text-xl">{item.subtitle}</h3>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -110,7 +86,7 @@ const About: FC = () => {
         })}
       </section>
 
-      <Footer></Footer>
+      <Footer />
     </>
   );
 };

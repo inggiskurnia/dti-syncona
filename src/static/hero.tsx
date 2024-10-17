@@ -29,7 +29,7 @@ const Hero: HeroProps[] = [
     button: {
       desc: "OUR PEOPLE",
       download: false,
-      link: "/",
+      link: "/teams",
     },
   },
   {

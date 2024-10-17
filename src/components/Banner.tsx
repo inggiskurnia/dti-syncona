@@ -19,25 +19,24 @@ const Banner: FC<BannerProps> = ({ banner, reverse }) => {
   const { heading, desc, button, image } = banner;
 
   return (
-    <div className="w-full p-20 flex justify-center">
+    <div className="w-full p-10 md:p-20 flex justify-center">
       <div
-        className={`flex ${reverse ? "flex-row-reverse" : ""} w-[80%] gap-36`}
+        className={`flex flex-col md:flex-row ${reverse ? "md:flex-row-reverse" : ""} w-full md:w-[80%] gap-10 md:gap-36`}
       >
-        <div className="flex flex-col h-full justify-center gap-10 w-1/2">
-          <h1 className="text-4xl">{heading}</h1>
-          <h3 className="text-lg">{desc}</h3>
+        <div className="flex flex-col h-full justify-center gap-5 w-full md:w-1/2">
+          <h1 className="text-2xl md:text-4xl">{heading}</h1>
+          <h3 className="text-base md:text-lg">{desc}</h3>
           <Button
             desc={button.desc}
             download={button.download}
             link={button.link}
           />
         </div>
-        <div className="w-1/2">
+        <div className="w-full md:w-1/2">
           <Image
             src={image}
             alt={heading}
-            layout="responsive"
-            objectFit="cover"
+            className="w-full h-auto object-cover"
           />
         </div>
       </div>

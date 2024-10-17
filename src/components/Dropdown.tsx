@@ -2,45 +2,58 @@
 
 import React, { useState } from "react";
 import HoverUnderline from "./HoverUnderLine";
+import { MenuSelection } from "@/static/navbarSelection";
+import Link from "next/link";
 
 interface DropdownProps {
   label: string;
-  options: string[];
-  onSelect: (option: string) => void;
+  options: MenuSelection[];
 }
 
-const Dropdown: React.FC<DropdownProps> = ({ label, options, onSelect }) => {
+const Dropdown: React.FC<DropdownProps> = ({ label, options }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleMouseEnter = () => setIsOpen(true);
-  const handleMouseLeave = () => setIsOpen(false);
+  const handleMouseEnter = () => {
+    if (window.innerWidth >= 768) {
+      setIsOpen(true);
+    }
+  };
 
-  const handleOptionClick = (option: string) => {
-    onSelect(option);
-    setIsOpen(false);
+  const handleMouseLeave = () => {
+    if (window.innerWidth >= 768) {
+      setIsOpen(false);
+    }
+  };
+
+  const handleToggle = () => {
+    if (window.innerWidth < 768) {
+      setIsOpen((prev) => !prev);
+    }
   };
 
   return (
     <div
-      className="relative inline-block w-64"
+      className="relative w-full md:w-64"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <button className="w-full px-4 py-2 text-left text-lg">{label}</button>
+      {/* Mobile-friendly dropdown button */}
+      <button
+        className="w-full px-4 py-2 text-left text-lg text- bg-transparent focus:outline-none"
+        onClick={handleToggle} // For mobile click interaction
+      >
+        {label}
+      </button>
+      {/* Dropdown menu */}
       {isOpen && (
-        <div
-          className="absolute left-0 w-full bg-white rounded shadow-lg z-10"
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-        >
+        <div className="absolute left-0 w-full bg-white rounded shadow-lg z-10 mt-2 md:mt-0">
           {options.map((option, index) => (
             <HoverUnderline key={index}>
-              <div
-                onClick={() => handleOptionClick(option)}
-                className="relative px-4 py-2 cursor-pointer"
-              >
-                {option}
-              </div>
+              <Link href={option.link}>
+                <div className="px-4 py-2 cursor-pointer hover:bg-gray-100">
+                  {option.name}
+                </div>
+              </Link>
             </HoverUnderline>
           ))}
         </div>
