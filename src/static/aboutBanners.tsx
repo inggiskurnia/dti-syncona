@@ -1,7 +1,6 @@
 import { BannerDetail } from "@/components/Banner";
 import aboutBanner1 from "@/assets/about-image1.jpg";
 import aboutBanner2 from "@/assets/about-image2.jpg";
-import aboutBanner3 from "@/assets/about-image3.jpg";
 import aboutBanner4 from "@/assets/about-image4.jpg";
 
 const aboutBanner: BannerDetail[] = [
