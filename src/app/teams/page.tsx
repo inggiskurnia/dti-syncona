@@ -57,7 +57,7 @@ const Teams: FC = () => {
               </h2>
               <p className="text-lg">
                 Working in close partnership with our portfolio company
-                management teams is core to Syncona’s model.
+                management teams is core to Syncona&apos;s model.
               </p>
             </div>
             <div className=" space-y-3">
@@ -66,8 +66,8 @@ const Teams: FC = () => {
               </h2>
               <p className="text-lg">
                 Our fully independent board promotes a culture of openness and
-                debate and exercises effective stewardship over the Company’s
-                activities in the interests of all stakeholders.
+                debate and exercises effective stewardship over the
+                Company&apos;s activities in the interests of all stakeholders.
               </p>
             </div>
           </div>

@@ -13,6 +13,24 @@ const About: FC = () => {
       <Navbar />
       <Hero desc="About Us" image={aboutUs}></Hero>
 
+      <section className="py-20 px-40 flex justify-center">
+        <div className="w-[50%] space-y-10">
+          <h1 className="text-4xl text-center">
+            Pioneering Life Science Investment for Long-Term Growth and Patient
+            Impact
+          </h1>
+          <h2 className="text-xl text-center">
+            Syncona is a leading life science investor with a strong balance
+            sheet and clear strategy for growth and patient impact. The core
+            premise of our investment strategy is that significant risk-adjusted
+            returns in life science come when novel technology is developed to a
+            late-stage clinical product. We apply a differentiated investment
+            model and take a long-term approach to build world-class companies
+            which can reach this point.
+          </h2>
+        </div>
+      </section>
+
       <section className="flex bg-synconaltdLightGray py-20 justify-center">
         <div className="grid grid-cols-2 w-[70%] gap-20">
           <h2 className="text-2xl">
