@@ -34,9 +34,8 @@ const Dropdown: React.FC<DropdownProps> = ({ label, options, onSelect }) => {
           onMouseLeave={handleMouseLeave}
         >
           {options.map((option, index) => (
-            <HoverUnderline>
+            <HoverUnderline key={index}>
               <div
-                key={index}
                 onClick={() => handleOptionClick(option)}
                 className="relative px-4 py-2 cursor-pointer"
               >

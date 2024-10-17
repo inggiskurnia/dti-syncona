@@ -1,5 +1,4 @@
 import { FC } from "react";
-import { User, UserResponse } from "@/types/User";
 import Image from "next/image";
 
 interface UserCardProps {

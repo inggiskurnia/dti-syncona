@@ -26,16 +26,6 @@ const aboutBanner: BannerDetail[] = [
     },
     image: aboutBanner2,
   },
-  // {
-  //   heading: "Driving value creation through strategy",
-  //   desc: "We take a long-term approach to building leading life science companies, focusing on maximising value through the cycle. Our fundamental view is that value creation in life science comes by taking products into late development, product approval and, in some cases, beyond.",
-  //   button: {
-  //     desc: "OUR INVESTMENT PROCESS",
-  //     download: false,
-  //     link: "/about/culture",
-  //   },
-  //   image: aboutBanner3,
-  // },
   {
     heading: "A multidisciplinary team",
     desc: "The life sciences investment team members have deep technical scientific backgrounds, supplemented by strong commercial experience ranging from venture capital investment to pharmaceutical launch.",

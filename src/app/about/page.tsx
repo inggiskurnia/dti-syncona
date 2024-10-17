@@ -1,7 +1,6 @@
 import Navbar from "@/components/Navbar";
 import { FC } from "react";
 import aboutUs from "@/assets/about-us.jpg";
-import Image from "next/image";
 import banners from "@/static/aboutBanners";
 import Banner from "@/components/Banner";
 import Footer from "@/components/Footer";
