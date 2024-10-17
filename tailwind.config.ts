@@ -12,6 +12,8 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
         synconaltdPink: "#b10097",
+        synconaltdGray: "#131e2a",
+        synconaltdLightGray: "#e4efef",
       },
       fontFamily: {
         subject: ["SubjectRegular", "sans-serif"],

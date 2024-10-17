@@ -13,7 +13,7 @@ export interface ButtonProperty {
 const Button: FC<ButtonProperty> = ({ desc, download, link }) => {
   return (
     <Link href={link} target={download ? "_blank" : ""}>
-      <div className="inline-flex w-64 items-center justify-center border-2 transition-colors duration-300 text-white font-bold bg-synconaltdPink gap-5 p-3 rounded-sm hover:bg-white hover:border-synconaltdPink hover:text-synconaltdPink group">
+      <div className="inline-flex w-64 items-center justify-center border-2 border-transparent transition-colors duration-300 text-white font-bold bg-synconaltdPink gap-5 p-3 rounded-sm hover:bg-white hover:border-synconaltdPink hover:text-synconaltdPink group">
         {desc}
         <Image
           src={download ? arrowDownPic : arrowRightPic}

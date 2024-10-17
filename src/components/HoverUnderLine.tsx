@@ -11,7 +11,7 @@ const HoverUnderline: React.FC<HoverUnderlineProps> = ({
 }) => {
   return (
     <span
-      className={`relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-${color} after:transition-all after:duration-300 hover:after:w-full`}
+      className={`relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-synconaltdPink after:transition-all after:duration-300 hover:after:w-full`}
     >
       {children}
     </span>

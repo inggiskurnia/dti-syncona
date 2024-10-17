@@ -6,6 +6,8 @@ import heroOurReport from "@/assets/hero-our-report.jpg";
 import heroOurPurpose from "@/assets/hero-our-purpose.jpg";
 import heroOurPeople from "@/assets/hero-our-people.jpg";
 import heroOurPortofolio from "@/assets/hero-our-portofolio.jpg";
+import Footer from "@/components/Footer";
+import WhoAreWe from "@/components/WhoAreWe";
 
 const herosTest: HeroProps[] = [
   {
@@ -51,6 +53,8 @@ export default function Home() {
     <>
       <Navbar />
       <Carousel heros={herosTest} />
+      <WhoAreWe></WhoAreWe>
+      <Footer></Footer>
     </>
   );
 }

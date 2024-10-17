@@ -29,6 +29,7 @@ const Carousel: React.FC<CarouselProps> = ({ heros }) => {
     <div className="w-full relative overflow-hidden">
       {/* Carousel Container */}
       <div className="relative flex">
+        <div className="bg-gray-400 op"></div>
         <div
           className="flex transition-transform duration-700 ease-in-out"
           style={{
