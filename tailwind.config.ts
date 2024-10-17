@@ -14,6 +14,7 @@ const config: Config = {
         synconaltdPink: "#b10097",
         synconaltdGray: "#131e2a",
         synconaltdLightGray: "#e4efef",
+        synconaltdDarkGreen: "#131E2A",
       },
       fontFamily: {
         subject: ["SubjectRegular", "sans-serif"],
