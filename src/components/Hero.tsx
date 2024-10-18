@@ -31,7 +31,7 @@ const Hero: FC<HeroProps> = ({
       />
 
       <h1
-        className={`absolute ${textColor} text-3xl md:text-5xl font-bold bottom-[20%] md:bottom-[30%] left-[5%] md:left-[10%]`}
+        className={`absolute ${textColor} text-3xl md:text-5xl font-bold bottom-[20%] md:bottom-[30%] left-[8%] md:left-[12%]`}
       >
         {desc}
       </h1>

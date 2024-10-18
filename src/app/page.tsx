@@ -12,10 +12,10 @@ export default function Home() {
       <Navbar />
       <Carousel heros={hero} />
 
-      <section className="flex justify-center py-20 md:py-28 bg-synconaltdGray">
-        <div className="grid grid-cols-1 md:grid-cols-2 items-center w-full max-w-6xl px-4">
+      <section className="flex justify-center py-10 md:py-28 bg-synconaltdGray">
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 items-center w-full max-w-6xl px-4">
           <div className="flex flex-col gap-5">
-            <h2 className="text-3xl md:text-4xl text-white text-center md:text-left">
+            <h2 className="text-2xl md:text-4xl text-white text-center md:text-left">
               What Our Clients Say
             </h2>
             <h3 className="text-base md:text-lg text-white text-center md:text-left">

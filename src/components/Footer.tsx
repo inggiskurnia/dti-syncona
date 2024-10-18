@@ -13,7 +13,7 @@ const Footer: FC = () => {
           </h2>
           <p className="text-base md:text-lg">
             Get the latest RNS, company news, share price information and
-            results from Syncona
+            resdivts from Syncona
           </p>
           <div className="flex flex-col md:flex-row gap-5">
             <Button desc="RNS ALERT" download={false} link="/" />
@@ -31,58 +31,58 @@ const Footer: FC = () => {
 
         <div className="md:col-span-1 flex flex-col gap-2 md:gap-5">
           <h2 className="text-xl md:text-2xl">Explore</h2>
-          <ul className="flex flex-col gap-1 text-base md:text-lg">
+          <div className="flex flex-col gap-1 text-base md:text-lg">
             <Link href="/about">
               <HoverUnderline>
-                <li>About Us</li>
+                <div>About Us</div>
               </HoverUnderline>
             </Link>
-          </ul>
-          <ul className="flex flex-col gap-1 text-base md:text-lg">
-            <Link href="/about/culture">
+          </div>
+          <div className="flex flex-col gap-1 text-base md:text-lg">
+            <Link href="/about/cdivture">
               <HoverUnderline>
-                <li>Our Culture</li>
+                <div>Our Cdivture</div>
               </HoverUnderline>
             </Link>
-          </ul>
-          <ul className="flex flex-col gap-1 text-base md:text-lg">
+          </div>
+          <div className="flex flex-col gap-1 text-base md:text-lg">
             <Link href="/about/history">
               <HoverUnderline>
-                <li>About History</li>
+                <div>Our History</div>
               </HoverUnderline>
             </Link>
-          </ul>
-          <ul className="flex flex-col gap-1 text-base md:text-lg">
+          </div>
+          <div className="flex flex-col gap-1 text-base md:text-lg">
             <Link href="/teams">
               <HoverUnderline>
-                <li>Our People</li>
+                <div>Our People</div>
               </HoverUnderline>
             </Link>
-          </ul>
-          <ul className="flex flex-col gap-1 text-base md:text-lg">
+          </div>
+          <div className="flex flex-col gap-1 text-base md:text-lg">
             <Link href="/products">
               <HoverUnderline>
-                <li>Product and Service</li>
+                <div>Product and Service</div>
               </HoverUnderline>
             </Link>
-          </ul>
+          </div>
         </div>
 
         <div className="md:col-span-5 flex flex-col">
           <p className="text-gray-400 mb-4 text-sm md:text-base">
             Copyright © Syncona 2024 Accessibility Privacy & cookies Employee
-            privacy notice Third party privacy notice Regulatory publications
+            privacy notice Third party privacy notice Regdivatory publications
             Modern slavery statement
           </p>
-          <p className="text-xs md:text-sm text-gray-500">
+          <p className="text-xs md:text-sm text-gray-400">
             Syncona Limited is registered in Guernsey no. 55514, registered
             office Frances House, PO Box 273, Sir William Place, St. Peter Port,
             Guernsey, GY1 3RD.
           </p>
-          <p className="text-xs md:text-sm text-gray-500">
+          <p className="text-xs md:text-sm text-gray-400">
             Syncona Investment Management Limited is registered in England no.
             10497864, 8 Bloomsbury Street, London WC1B 3SR and is authorised and
-            regulated by the FCA. Syncona Limited is managed by Syncona
+            regdivated by the FCA. Syncona Limited is managed by Syncona
             Investment Management Limited.
           </p>
         </div>

@@ -12,11 +12,9 @@ const ValueSection: React.FC<ValueSectionProps> = ({
   separator,
 }) => {
   return (
-    <div className="space-y-5 p-4 sm:p-6 md:p-8 lg:p-10">
-      <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
-        {title}
-      </h1>
-      <ul className="text-base sm:text-lg md:text-xl lg:text-2xl space-y-3">
+    <div className="space-y-5 md:px-8">
+      <h1 className="text-2xl md:text-3xl font-bold">{title}</h1>
+      <ul className="text-base md:text-lg space-y-3">
         {items.map((item, index) => (
           <li key={index}>{item}</li>
         ))}

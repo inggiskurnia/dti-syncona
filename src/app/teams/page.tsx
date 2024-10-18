@@ -81,8 +81,8 @@ const Teams: FC = () => {
         </div>
       </section>
 
-      <section className="py-20 px-5 md:px-40 bg-synconaltdLightGray">
-        <div className="grid grid-cols-1 md:grid-cols-2 mb-10">
+      <section className="py-20 px-5 md:px-56 bg-synconaltdLightGray">
+        <div className="grid grid-cols-1 md:grid-cols-2 mb-20">
           <h1 className="text-2xl md:text-3xl">The Syncona team</h1>
           <h2 className="text-base md:text-xl">
             Please navigate below to see the members of the Syncona Investment

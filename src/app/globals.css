@@ -5,6 +5,7 @@
 @font-face {
   font-family: "SubjectRegular";
   src: url("./fonts/subject.woff2") format("woff2");
+  font-display: swap;
 }
 
 body {
