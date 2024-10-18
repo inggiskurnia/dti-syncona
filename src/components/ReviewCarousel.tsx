@@ -1,6 +1,5 @@
 "use client";
-
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 interface Review {
   name: string;
@@ -14,14 +13,39 @@ interface ReviewCarouselProps {
 }
 
 const ReviewCarousel: React.FC<ReviewCarouselProps> = ({ reviews }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const [onHover, setOnHover] = useState<boolean>(false);
 
   const goToReview = (index: number) => {
     setCurrentIndex(index);
   };
 
+  const handleMouseHover = () => {
+    setOnHover(true);
+  };
+
+  const handleMouseLeave = () => {
+    setOnHover(false);
+  };
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      if (!onHover) {
+        setCurrentIndex((prevIndex) =>
+          prevIndex === reviews.length - 1 ? 0 : prevIndex + 1
+        );
+      }
+    }, 5000);
+
+    return () => clearInterval(intervalId);
+  }, [onHover, reviews.length]);
+
   return (
-    <div className="relative p-6 bg-white rounded-lg shadow-lg h-96 flex flex-col justify-between">
+    <div
+      className="relative p-6 bg-white rounded-lg shadow-lg h-96 flex flex-col justify-between"
+      onMouseEnter={handleMouseHover}
+      onMouseLeave={handleMouseLeave}
+    >
       <div className="text-center">
         <h2 className="text-lg md:text-xl font-semibold">
           {reviews[currentIndex].name}
@@ -29,12 +53,10 @@ const ReviewCarousel: React.FC<ReviewCarouselProps> = ({ reviews }) => {
         <p className="text-gray-600 text-sm md:text-base">
           {reviews[currentIndex].position} at {reviews[currentIndex].company}
         </p>
-
         <p className="mt-10 text-gray-800 italic">
           &quot;{reviews[currentIndex].review}&quot;
         </p>
       </div>
-
       <div className="flex justify-center mt-4 space-x-2">
         {reviews.map((_, index) => (
           <button

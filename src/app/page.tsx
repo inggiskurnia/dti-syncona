@@ -12,7 +12,7 @@ export default function Home() {
       <Navbar />
       <Carousel heros={hero} />
 
-      <section className="flex justify-center py-10 md:py-28 bg-synconaltdGray">
+      <section className="flex justify-center py-10 md:py-28 bg-synconaltdGray md:bg-[url('/background-culture.svg')] md:bg-cover md:bg-lef">
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2 items-center w-full max-w-6xl px-4">
           <div className="flex flex-col gap-5">
             <h2 className="text-2xl md:text-4xl text-white text-center md:text-left">
