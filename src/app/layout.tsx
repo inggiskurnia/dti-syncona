@@ -1,8 +1,11 @@
 import "./globals.css";
+import Script from "next/script";
 
 export default function RootLayout({
   children,
-}: Readonly<{ children: React.ReactNode }>) {
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
       <head>
@@ -12,8 +15,12 @@ export default function RootLayout({
           as="font"
           type="font/woff2"
           crossOrigin="anonymous"
-        ></link>
-        <script type="module" src="/path/to/modern.js"></script>
+        />
+        <Script
+          type="module"
+          src="/path/to/modern.js"
+          strategy="beforeInteractive"
+        />
         <title>Syncona Ltd</title>
       </head>
       <body>{children}</body>

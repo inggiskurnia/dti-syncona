@@ -40,7 +40,7 @@ const Navbar: FC = () => {
         window.removeEventListener("scroll", handleScroll);
       };
     }
-  }, [handleScroll]);
+  }, []);
 
   return (
     <header
