@@ -18,9 +18,18 @@ const Hero: HeroProps[] = [
     image: heroOurPurpose,
     desc: "Our purpose is to invest to extend and enhance human life",
     button: {
-      desc: "WATCH VIDEO",
+      desc: "ABOUT US",
       download: false,
-      link: "/",
+      link: "/about",
+    },
+  },
+  {
+    image: heroOurPortofolio,
+    desc: "A diverse history of investing in life science companies",
+    button: {
+      desc: "OUR HISTORY",
+      download: false,
+      link: "/about/history",
     },
   },
   {
@@ -30,15 +39,6 @@ const Hero: HeroProps[] = [
       desc: "OUR PEOPLE",
       download: false,
       link: "/teams",
-    },
-  },
-  {
-    image: heroOurPortofolio,
-    desc: "A diversified portfolio of life science companies",
-    button: {
-      desc: "PORTOFOLIO",
-      download: false,
-      link: "/",
     },
   },
 ];

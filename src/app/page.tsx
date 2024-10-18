@@ -12,19 +12,20 @@ export default function Home() {
       <Navbar />
       <Carousel heros={hero} />
 
-      <section className="flex justify-center py-44 bg-synconaltdGray">
-        <div className="grid grid-cols-2 items-center">
+      <section className="flex justify-center py-20 md:py-28 bg-synconaltdGray">
+        <div className="grid grid-cols-1 md:grid-cols-2 items-center w-full max-w-6xl px-4">
           <div className="flex flex-col gap-5">
-            <h2 className="text-4xl text-white">What Our Clients Say</h2>
-            <h3 className="text-lg text-white">
+            <h2 className="text-3xl md:text-4xl text-white text-center md:text-left">
+              What Our Clients Say
+            </h2>
+            <h3 className="text-base md:text-lg text-white text-center md:text-left">
               Discover how Syncona is making an impact in the life sciences.
             </h3>
           </div>
-          <ReviewCarousel reviews={reviews}></ReviewCarousel>
+          <ReviewCarousel reviews={reviews} />
         </div>
       </section>
 
-      {/* Responsive Section */}
       <section className="flex justify-center py-10 md:py-20 bg-synconaltdLightGray">
         <div className="flex flex-col items-center w-full px-4 md:w-[45%] justify-center gap-8 md:gap-12">
           <h2 className="w-full md:w-[70%] text-xl md:text-2xl text-center">

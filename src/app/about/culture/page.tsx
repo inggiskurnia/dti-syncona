@@ -22,12 +22,12 @@ const Culture: FC = () => {
         <Banner banner={banner} reverse={index % 2 === 0} key={index} />
       ))}
 
-      <section className="grid grid-cols-2 py-20 px-64 bg-synconaltdGray text-white md:bg-[url('/background-culture.svg')] md:bg-cover md:bg-left">
-        <h1 className="text-2xl">Our Values</h1>
-        <div className="flex flex-col gap-10">
-          <h2 className="text-2xl">
+      <section className="grid grid-cols-1 md:grid-cols-2 py-10 md:py-20 px-4 md:px-64 bg-synconaltdGray text-white md:bg-[url('/background-culture.svg')] md:bg-cover md:bg-left">
+        <h1 className="text-3xl md:text-2xl">Our Values</h1>
+        <div className="flex flex-col gap-5 md:gap-10">
+          <h2 className="text-lg md:text-2xl">
             Our values are at the heart of all that we do as we seek to deliver
-            Syncona’s mission for all of our stakeholders
+            Syncona&apos;s mission for all of our stakeholders
           </h2>
           {values.map((value, index) => (
             <ValueSection

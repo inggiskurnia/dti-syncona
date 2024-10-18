@@ -1,4 +1,4 @@
-interface Review {
+export interface Review {
   name: string;
   position: string;
   company: string;

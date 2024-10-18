@@ -10,8 +10,7 @@ export const aboutUsSelection: MenuSelection[] = [
 ];
 
 export const productsServicesSelection: MenuSelection[] = [
-  { name: "Product", link: "/product" },
-  { name: "Services", link: "/services" },
+  { name: "View this section", link: "/products" },
 ];
 
 export const ourPeopleSelection: MenuSelection[] = [

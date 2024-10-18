@@ -1,12 +1,13 @@
 import { FC } from "react";
 import Button from "./Button";
 import HoverUnderline from "./HoverUnderLine";
+import Link from "next/link";
 
 const Footer: FC = () => {
   return (
-    <footer className="bg-synconaltdGray text-white flex flex-col items-center px-8 py-20 md:bg-[url('/background.svg')] md:bg-cover md:bg-left">
-      <div className="flex flex-col md:flex-row gap-10 md:gap-36 w-full md:w-[65%] pb-20">
-        <div className="flex flex-col gap-8">
+    <footer className="bg-synconaltdGray text-white flex flex-col items-center p-10 md:px-56 md:py-20 md:bg-[url('/background.svg')] md:bg-cover md:bg-left">
+      <div className="grid grid-cols-1 md:grid-cols-6 gap-10">
+        <div className="md:col-span-3 flex flex-col gap-8">
           <h2 className="text-xl md:text-2xl">
             Sign-up for company news alerts
           </h2>
@@ -20,38 +21,54 @@ const Footer: FC = () => {
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between w-full md:w-[60%]">
-          <div className="flex flex-col gap-8">
-            <h2 className="text-xl md:text-2xl">Contact</h2>
-            <p className="text-base md:text-lg">
-              Syncona Investment Management Limited 2nd Floor 8 Bloomsbury
-              Street London WC1B 3SR
-            </p>
-          </div>
-
-          <div className="flex flex-col gap-8 mt-5 md:mt-0">
-            <h2 className="text-xl md:text-2xl">Explore</h2>
-            <ul className="flex flex-col gap-1 text-base md:text-lg">
-              {[
-                "About us",
-                "Our People",
-                "Portfolio",
-                "Sustainability",
-                "News and insights",
-                "Investor",
-                "Contact",
-              ].map((item) => (
-                <HoverUnderline key={item}>
-                  <li>{item}</li>
-                </HoverUnderline>
-              ))}
-            </ul>
-          </div>
+        <div className="md:col-span-2 flex flex-col gap-2 md:gap-8">
+          <h2 className="text-xl md:text-2xl">Contact</h2>
+          <p className="text-base md:text-lg">
+            Syncona Investment Management Limited 2nd Floor 8 Bloomsbury Street
+            London WC1B 3SR
+          </p>
         </div>
-      </div>
 
-      <div className="flex flex-col md:flex-row justify-between w-full md:w-[65%] gap-10">
-        <div className="flex flex-col">
+        <div className="md:col-span-1 flex flex-col gap-2 md:gap-5">
+          <h2 className="text-xl md:text-2xl">Explore</h2>
+          <ul className="flex flex-col gap-1 text-base md:text-lg">
+            <Link href="/about">
+              <HoverUnderline>
+                <li>About Us</li>
+              </HoverUnderline>
+            </Link>
+          </ul>
+          <ul className="flex flex-col gap-1 text-base md:text-lg">
+            <Link href="/about/culture">
+              <HoverUnderline>
+                <li>Our Culture</li>
+              </HoverUnderline>
+            </Link>
+          </ul>
+          <ul className="flex flex-col gap-1 text-base md:text-lg">
+            <Link href="/about/history">
+              <HoverUnderline>
+                <li>About History</li>
+              </HoverUnderline>
+            </Link>
+          </ul>
+          <ul className="flex flex-col gap-1 text-base md:text-lg">
+            <Link href="/teams">
+              <HoverUnderline>
+                <li>Our People</li>
+              </HoverUnderline>
+            </Link>
+          </ul>
+          <ul className="flex flex-col gap-1 text-base md:text-lg">
+            <Link href="/products">
+              <HoverUnderline>
+                <li>Product and Service</li>
+              </HoverUnderline>
+            </Link>
+          </ul>
+        </div>
+
+        <div className="md:col-span-5 flex flex-col">
           <p className="text-gray-400 mb-4 text-sm md:text-base">
             Copyright © Syncona 2024 Accessibility Privacy & cookies Employee
             privacy notice Third party privacy notice Regulatory publications
@@ -69,7 +86,9 @@ const Footer: FC = () => {
             Investment Management Limited.
           </p>
         </div>
-        <p className="text-gray-400 text-sm md:text-base">threethirty.studio</p>
+        <p className="md:col-span-1 text-gray-400 text-sm md:text-base">
+          threethirty.studio
+        </p>
       </div>
     </footer>
   );

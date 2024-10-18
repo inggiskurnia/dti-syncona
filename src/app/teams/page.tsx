@@ -19,8 +19,8 @@ import userTitle from "@/static/userTitle";
 
 const Teams: FC = () => {
   const { data, error, isLoading } = useQuery<UserResponse, Error>({
-    queryKey: ["users"], // Query key
-    queryFn: fetchUsers, // Fetch function
+    queryKey: ["users"],
+    queryFn: fetchUsers,
   });
 
   if (isLoading) return <div>Loading...</div>;

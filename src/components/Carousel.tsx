@@ -27,9 +27,7 @@ const Carousel: React.FC<CarouselProps> = ({ heros }) => {
 
   return (
     <div className="w-full relative overflow-hidden">
-      {/* Carousel Container */}
       <div className="relative flex">
-        {/* Carousel Slides */}
         <div
           className="flex transition-transform duration-700 ease-in-out"
           style={{
@@ -38,30 +36,27 @@ const Carousel: React.FC<CarouselProps> = ({ heros }) => {
         >
           {heros.map((hero, index) => (
             <div key={index} className="relative min-w-full flex justify-end">
-              {/* Slide Content */}
               <div className="absolute w-[70%] left-6 md:left-[15%] md:right-[15%] top-[30%] md:w-[50%] flex flex-col gap-4 md:gap-12 z-10">
-                {/* Description */}
                 <div className="text-xl md:text-6xl text-black">
                   {hero.desc}
                 </div>
-                {/* Button */}
                 <Button
                   desc={hero.button.desc}
                   download={hero.button.download}
                   link={hero.button.link}
                 />
-                {/* Dots Navigation */}
                 <div className="inline-flex gap-2 md:gap-4 mt-6">
                   {heros.map((_, dotIndex) => (
                     <div
+                      aria-label="button"
                       key={dotIndex}
                       className="relative bg-gray-400 h-1 w-8 md:w-16 cursor-pointer"
                       onClick={() => handleNextSlide(dotIndex)}
                     >
                       <div
-                        className={`absolute left-0 top-0 h-full bg-pink-500 ${
+                        className={`absolute left-0 top-0 h-full bg-synconaltdPink ${
                           dotIndex === currentIndex
-                            ? "w-full transition-all duration-700"
+                            ? "w-full transition-all duration-[3000ms]"
                             : "w-0"
                         }`}
                       ></div>
@@ -69,11 +64,10 @@ const Carousel: React.FC<CarouselProps> = ({ heros }) => {
                   ))}
                 </div>
               </div>
-              {/* Image */}
               <Image
                 src={hero.image}
                 alt={`Slide ${index}`}
-                className="w-full h-[60vh] md:h-[90vh] object-cover" // Fixed height to maintain aspect ratio
+                className="w-full h-[60vh] md:h-[90vh] object-cover"
                 priority={index === 0}
               />
             </div>

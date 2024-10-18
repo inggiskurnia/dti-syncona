@@ -7,11 +7,11 @@ const aboutBanner: BannerDetail[] = [
   {
     heading:
       "A vision to unlock the potential from truly innovative science to transform patients’ lives",
-    desc: "We do this by creating, building and scaling companies to turn exceptional science into transformational treatments to patients in areas of high unmet need.",
+    desc: "From the start, Syncona has focused on building and scaling companies that transform groundbreaking science into therapies for patients with unmet medical needs. Our mission remains to deliver impactful healthcare solutions by turning exceptional scientific discoveries into real-world treatments.",
     button: {
-      desc: "WHO WE ARE",
+      desc: "OUR HISTORY",
       download: false,
-      link: "/about/whoweare",
+      link: "/about/history",
     },
     image: aboutBanner1,
   },

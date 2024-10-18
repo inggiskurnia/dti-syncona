@@ -33,18 +33,16 @@ const Dropdown: React.FC<DropdownProps> = ({ label, options }) => {
 
   return (
     <div
-      className="relative w-full md:w-64"
+      className="relative w-full md:w-52"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      {/* Mobile-friendly dropdown button */}
       <button
         className="w-full px-4 py-2 text-left text-lg text- bg-transparent focus:outline-none"
-        onClick={handleToggle} // For mobile click interaction
+        onClick={handleToggle}
       >
         {label}
       </button>
-      {/* Dropdown menu */}
       {isOpen && (
         <div className="absolute left-0 w-full bg-white rounded shadow-lg z-10 mt-2 md:mt-0">
           {options.map((option, index) => (

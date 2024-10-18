@@ -21,26 +21,28 @@ const ReviewCarousel: React.FC<ReviewCarouselProps> = ({ reviews }) => {
   };
 
   return (
-    <div className="relative max-w-md mx-auto mt-10 p-14 bg-white rounded-lg shadow-lg sm:max-w-xl md:max-w-2xl lg:max-w-3xl">
+    <div className="relative p-6 bg-white rounded-lg shadow-lg h-96 flex flex-col justify-between">
       <div className="text-center">
-        <h2 className="text-xl font-semibold">{reviews[currentIndex].name}</h2>
-        <p className="text-gray-600">
+        <h2 className="text-lg md:text-xl font-semibold">
+          {reviews[currentIndex].name}
+        </h2>
+        <p className="text-gray-600 text-sm md:text-base">
           {reviews[currentIndex].position} at {reviews[currentIndex].company}
         </p>
 
-        {/* Set a fixed height for the review text to maintain position */}
-        <p className="mt-4 text-gray-800 italic h-24 overflow-hidden">
+        <p className="mt-10 text-gray-800 italic">
           "{reviews[currentIndex].review}"
         </p>
       </div>
 
-      {/* Dot indicators */}
       <div className="flex justify-center mt-4 space-x-2">
         {reviews.map((_, index) => (
           <button
             key={index}
             onClick={() => goToReview(index)}
-            className={`w-7 h-1 rounded-full ${index === currentIndex ? "bg-synconaltdPink" : "bg-gray-300"}`}
+            className={`w-4 h-1 md:w-7 md:h-1 rounded-full ${
+              index === currentIndex ? "bg-synconaltdPink" : "bg-gray-300"
+            }`}
           />
         ))}
       </div>

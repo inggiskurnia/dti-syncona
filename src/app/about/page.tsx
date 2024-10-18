@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import aboutNumbers from "@/static/aboutNumbers";
 import BusinessNumbers from "@/components/BussinessNumbers";
+import SectionCol from "@/components/SectionCol";
 
 const About: FC = () => {
   return (
@@ -32,21 +33,10 @@ const About: FC = () => {
         </div>
       </section>
 
-      <section className="flex bg-synconaltdLightGray py-20 justify-center">
-        <div className="grid grid-cols-1 md:grid-cols-2 w-[90%] md:w-[70%] gap-10">
-          <h2 className="text-xl md:text-2xl text-center">
-            We invest to extend and enhance human life
-          </h2>
-          <p className="text-base md:text-lg text-center">
-            We aim to build and maintain a diversified portfolio of 20-25
-            globally leading life science businesses, across development stage,
-            modality and therapeutic area, for the benefit of all our
-            stakeholders. We focus on developing treatments that deliver patient
-            impact by working in close partnership with world-class academic
-            founders and experienced management teams.
-          </p>
-        </div>
-      </section>
+      <SectionCol
+        title="We invest to extend and enhance human life"
+        description="We aim to build and maintain a diversified portfolio of 20-25 globally leading life science businesses, across development stage, modality and therapeutic area, for the benefit of all our stakeholders."
+      ></SectionCol>
 
       <BusinessNumbers
         title="OUR BUSINESS IN NUMBERS"
