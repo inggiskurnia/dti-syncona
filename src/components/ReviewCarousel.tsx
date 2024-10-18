@@ -31,7 +31,7 @@ const ReviewCarousel: React.FC<ReviewCarouselProps> = ({ reviews }) => {
         </p>
 
         <p className="mt-10 text-gray-800 italic">
-          "{reviews[currentIndex].review}"
+          &quot;{reviews[currentIndex].review}&quot;
         </p>
       </div>
 

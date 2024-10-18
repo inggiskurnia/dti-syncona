@@ -56,7 +56,7 @@ const Teams: FC = () => {
               experience ranging from venture capital investment to
               pharmaceutical launch. This skill set has resulted in a strong
               network in life science, enabling the best talent to be attracted
-              at the level of Syncona's portfolio companies.
+              at the level of Syncona&apos;s portfolio companies.
             </p>
           </div>
           <div className="space-y-3">
