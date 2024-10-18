@@ -23,9 +23,9 @@ const Carousel: React.FC<CarouselProps> = ({ heros }) => {
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setCurrentIndex((prevIndex) => (
+      setCurrentIndex((prevIndex) =>
         prevIndex === heros.length - 1 ? 0 : prevIndex + 1
-      ));
+      );
     }, 5000);
 
     return () => clearInterval(intervalId);
