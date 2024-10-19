@@ -34,11 +34,11 @@ const Banner: FC<BannerProps> = ({ banner, reverse }) => {
             />
           )}
         </div>
-        <div className="w-full md:w-1/2">
+        <div className="w-full md:w-1/2 overflow-hidden ">
           <Image
             src={image}
             alt={heading ? heading : "heading"}
-            className="w-full h-auto object-cover"
+            className="w-full h-auto object-cover hover:scale-110 ease-in-out duration-300"
           />
         </div>
       </div>

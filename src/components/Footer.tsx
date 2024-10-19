@@ -39,9 +39,9 @@ const Footer: FC = () => {
             </Link>
           </div>
           <div className="flex flex-col gap-1 text-base md:text-lg">
-            <Link href="/about/cdivture">
+            <Link href="/about/culture">
               <HoverUnderline>
-                <div>Our Cdivture</div>
+                <div>Our Culture</div>
               </HoverUnderline>
             </Link>
           </div>

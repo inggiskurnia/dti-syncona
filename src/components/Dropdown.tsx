@@ -13,29 +13,15 @@ interface DropdownProps {
 const Dropdown: React.FC<DropdownProps> = ({ label, options }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleMouseEnter = () => {
-    if (window.innerWidth >= 768) {
-      setIsOpen(true);
-    }
-  };
-
-  const handleMouseLeave = () => {
-    if (window.innerWidth >= 768) {
-      setIsOpen(false);
-    }
-  };
-
   const handleToggle = () => {
-    if (window.innerWidth < 768) {
-      setIsOpen((prev) => !prev);
-    }
+    setIsOpen((prev) => !prev);
   };
 
   return (
     <div
       className="relative w-full md:w-52"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
+      onMouseEnter={handleToggle}
+      onMouseLeave={handleToggle}
     >
       <button
         className="w-full px-4 py-2 text-left text-lg text- bg-transparent focus:outline-none"

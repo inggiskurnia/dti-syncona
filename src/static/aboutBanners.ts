@@ -31,7 +31,7 @@ const aboutBanner: BannerDetail[] = [
     button: {
       desc: "OUR PEOPLE",
       download: false,
-      link: "/about/people",
+      link: "/teams",
     },
     image: aboutBanner4,
   },
