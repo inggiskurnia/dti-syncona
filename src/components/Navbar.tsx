@@ -1,8 +1,7 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { FC } from "react";
-import logo from "@/assets/synconia-logo.svg";
 import Dropdown from "./Dropdown";
 import { FiMenu, FiX } from "react-icons/fi";
 import Link from "next/link";
@@ -11,7 +10,7 @@ import {
   productsServicesSelection,
   ourPeopleSelection,
 } from "@/static/navbarSelection";
-import { LogoImage, MenuData } from "@/static/navbar";
+import { LogoImage, NavbarData } from "@/static/navbar";
 
 const Navbar: FC = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
@@ -56,7 +55,12 @@ const Navbar: FC = () => {
       }`}
     >
       <Link href="/">
-        <Image src={logo} width={205} height={50} alt="synconia-logo"></Image>
+        <Image
+          src={LogoImage}
+          width={205}
+          height={50}
+          alt="synconia-logo"
+        ></Image>
       </Link>
       <div className="hidden gap-5 md:flex">
         <Dropdown label="About us" options={aboutUsSelection} />
@@ -68,45 +72,44 @@ const Navbar: FC = () => {
           {isMobileMenuOpen ? <FiX size={30} /> : <FiMenu size={30} />}
         </button>
       </div>
-
-      {isMobileMenuOpen ? (
-        <div className="absolute left-0 top-16 flex w-full flex-col gap-5 bg-white py-8 shadow-lg md:hidden">
-          {MenuData.map((menu, index) => (
-            <div
-              key={index}
-              className="px-8"
-              onClick={() => toggleSubMenu(index)}
+      <div
+        className={`absolute left-0 top-14 flex w-full flex-col gap-5 bg-white py-8 shadow-lg transition-all duration-500 ease-in-out md:hidden ${
+          isMobileMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
+        {NavbarData.map((menu, index) => (
+          <div
+            key={index}
+            className="px-8"
+            onClick={() => toggleSubMenu(index)}
+          >
+            <button
+              className={
+                openIndex === index
+                  ? "w-full border-b-2 border-b-synconaltdPink text-left"
+                  : ""
+              }
             >
-              <button
-                className={
+              {menu.menu}
+            </button>
+            {menu.submenu.length > 0 && (
+              <div
+                className={`overflow-hidden transition-all duration-500 ease-in-out ${
                   openIndex === index
-                    ? "w-full border-b-2 border-b-synconaltdPink text-left"
-                    : ""
-                }
+                    ? "max-h-40 opacity-100"
+                    : "max-h-0 opacity-0"
+                }`}
               >
-                {menu.menu}
-              </button>
-              {menu.submenu.length > 0 && (
-                <div
-                  className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                    openIndex === index
-                      ? "max-h-40 opacity-100"
-                      : "max-h-0 opacity-0"
-                  }`}
-                >
-                  {menu.submenu.map((submenu, subIndex) => (
-                    <div key={subIndex} className="mt-4 pl-4">
-                      {submenu}
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-      ) : (
-        ""
-      )}
+                {menu.submenu.map((submenu, subIndex) => (
+                  <div key={subIndex} className="mt-4 pl-4">
+                    <Link href={submenu.link}>{submenu.title}</Link>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
     </header>
   );
 };

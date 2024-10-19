@@ -1,23 +1,51 @@
 import synconaLogo from "@/assets/synconia-logo.svg";
 
-interface Menu {
+interface Navbar {
   menu: string;
-  submenu: string[];
+  submenu: MenuData[];
+}
+
+interface MenuData {
+  title: string;
+  link: string;
 }
 
 export const LogoImage = synconaLogo;
 
-export const MenuData: Menu[] = [
+export const NavbarData: Navbar[] = [
   {
     menu: "About Us",
-    submenu: ["View this section", "Our Culture", "Our History"],
+    submenu: [
+      {
+        title: "View this section",
+        link: "/about",
+      },
+      {
+        title: "Our Culture",
+        link: "/about/culture",
+      },
+      {
+        title: "Our History",
+        link: "/about/history",
+      },
+    ],
   },
   {
-    menu: "Product",
-    submenu: ["View this section"],
+    menu: "Products",
+    submenu: [
+      {
+        title: "View this section",
+        link: "/products",
+      },
+    ],
   },
   {
-    menu: "Our People",
-    submenu: ["View this section"],
+    menu: "Our Teams",
+    submenu: [
+      {
+        title: "View this section",
+        link: "/teams",
+      },
+    ],
   },
 ];
