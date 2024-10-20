@@ -61,6 +61,7 @@ const Navbar: FC = () => {
             <button className="text- w-full bg-transparent px-4 py-2 text-left text-lg focus:outline-none">
               {menu.menu}
             </button>
+
             {openIndex === index && (
               <div className="absolute left-0 z-10 mt-2 w-full rounded bg-white shadow-lg md:mt-0">
                 {menu.submenu.map((submenu, index) => (

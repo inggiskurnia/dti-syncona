@@ -19,11 +19,11 @@ const Banner: FC<BannerProps> = ({ banner, reverse }) => {
   const { heading, desc, button, image } = banner;
 
   return (
-    <div className="w-full p-10 md:p-20 flex justify-center">
+    <div className="flex w-full justify-center p-10 md:p-20">
       <div
-        className={`flex flex-col md:flex-row ${reverse ? "md:flex-row-reverse" : ""} w-full md:w-[80%] gap-10 md:gap-36`}
+        className={`flex flex-col md:flex-row ${reverse ? "md:flex-row-reverse" : ""} w-full gap-10 md:w-[80%] md:gap-36`}
       >
-        <div className="flex flex-col h-full justify-center gap-5 w-full md:w-1/2">
+        <div className="flex h-full w-full flex-col justify-center gap-5 md:w-1/2">
           {heading && <h1 className="text-2xl md:text-4xl">{heading}</h1>}
           <h3 className="text-base md:text-lg">{desc}</h3>
           {button && (
@@ -34,11 +34,11 @@ const Banner: FC<BannerProps> = ({ banner, reverse }) => {
             />
           )}
         </div>
-        <div className="w-full md:w-1/2 overflow-hidden ">
+        <div className="h-auto w-full md:w-1/2 md:overflow-hidden">
           <Image
             src={image}
             alt={heading ? heading : "heading"}
-            className="w-full h-auto object-cover hover:scale-110 ease-in-out duration-300"
+            className="h-auto w-full object-contain transition-transform duration-300 ease-in-out hover:scale-110"
           />
         </div>
       </div>

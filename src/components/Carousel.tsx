@@ -24,7 +24,7 @@ const Carousel: React.FC<CarouselProps> = ({ heros }) => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentIndex((prevIndex) =>
-        prevIndex === heros.length - 1 ? 0 : prevIndex + 1
+        prevIndex === heros.length - 1 ? 0 : prevIndex + 1,
       );
     }, 5000);
 
@@ -36,7 +36,7 @@ const Carousel: React.FC<CarouselProps> = ({ heros }) => {
   }
 
   return (
-    <div className="w-full relative overflow-hidden">
+    <div className="relative w-full overflow-hidden">
       <div className="relative flex">
         <div
           className="flex transition-transform duration-1000 ease-in-out"
@@ -45,9 +45,9 @@ const Carousel: React.FC<CarouselProps> = ({ heros }) => {
           }}
         >
           {heros.map((hero, index) => (
-            <div key={index} className="relative min-w-full flex justify-end">
-              <div className="absolute w-[70%] left-6 md:left-[15%] md:right-[15%] top-[30%] md:w-[40%] flex flex-col gap-4 md:gap-12 z-10">
-                <div className="text-xl md:text-6xl text-black">
+            <div key={index} className="relative flex min-w-full justify-end">
+              <div className="absolute left-6 top-[30%] flex w-[70%] flex-col gap-4 md:left-[15%] md:right-[15%] md:w-[40%] md:gap-12">
+                <div className="text-xl text-black md:text-6xl">
                   {hero.desc}
                 </div>
                 <Button
@@ -55,12 +55,12 @@ const Carousel: React.FC<CarouselProps> = ({ heros }) => {
                   download={hero.button.download}
                   link={hero.button.link}
                 />
-                <div className="inline-flex gap-2 md:gap-4 mt-6">
+                <div className="mt-6 inline-flex gap-2 md:gap-4">
                   {heros.map((_, dotIndex) => (
                     <button
                       aria-label={`Go to slide ${dotIndex + 1}`}
                       key={dotIndex}
-                      className="relative bg-gray-400 h-1 w-8 md:w-16 cursor-pointer"
+                      className="relative h-1 w-8 cursor-pointer bg-gray-400 md:w-16"
                       onClick={() => handleNextSlide(dotIndex)}
                     >
                       <div
@@ -77,7 +77,7 @@ const Carousel: React.FC<CarouselProps> = ({ heros }) => {
               <Image
                 src={hero.image}
                 alt={`Slide ${index}`}
-                className="w-full h-[60vh] md:h-[90vh] object-cover"
+                className="h-[60vh] w-full object-cover md:h-[90vh]"
                 priority={index === 0}
               />
             </div>
