@@ -13,7 +13,7 @@ export default function Home() {
       <Carousel heros={hero} />
 
       <section className="md:bg-lef flex justify-center bg-synconaltdGray py-10 md:bg-[url('/background-culture.svg')] md:bg-cover md:py-28">
-        <div className="grid w-full max-w-6xl grid-cols-1 items-center gap-5 px-4 md:grid-cols-2">
+        <div className="grid w-full max-w-6xl grid-cols-1 items-center gap-5 px-5 md:grid-cols-2">
           <div className="flex flex-col gap-5">
             <h2 className="text-center text-2xl text-white md:text-left md:text-4xl">
               What Our Clients Say

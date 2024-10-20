@@ -15,7 +15,7 @@ export interface HeroProps {
 }
 
 const Carousel: React.FC<CarouselProps> = ({ heros }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
 
   const handleNextSlide = (index: number) => {
     setCurrentIndex(index);
