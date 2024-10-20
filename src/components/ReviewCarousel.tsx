@@ -45,11 +45,11 @@ const ReviewCarousel: React.FC<ReviewCarouselProps> = ({ reviews }) => {
       <div className="mt-4 flex justify-center space-x-2">
         {reviews.map((_, index) => (
           <div
+            key={index}
             className="relative h-1 w-10 cursor-pointer bg-gray-400"
             onClick={() => goToReview(index)}
           >
             <button
-              key={index}
               className={`absolute h-1 bg-synconaltdPink ${
                 index === currentIndex
                   ? "w-full transition-all duration-[5000ms]"
