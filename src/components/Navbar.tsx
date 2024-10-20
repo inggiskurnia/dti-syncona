@@ -2,21 +2,16 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { FC } from "react";
-import Dropdown from "./Dropdown";
 import { FiMenu, FiX } from "react-icons/fi";
 import Link from "next/link";
-import {
-  aboutUsSelection,
-  productsServicesSelection,
-  ourPeopleSelection,
-} from "@/static/navbarSelection";
 import { LogoImage, NavbarData } from "@/static/navbar";
+import HoverUnderline from "./HoverUnderLine";
 
 const Navbar: FC = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
   const [isVisible, setIsVisible] = useState<boolean>(true);
-  let lastScrollY = 0;
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  let lastScrollY = 0;
 
   const toggleSubMenu = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -28,15 +23,13 @@ const Navbar: FC = () => {
   };
 
   const handleScroll = () => {
-    if (typeof window !== "undefined") {
-      if (window.scrollY < lastScrollY) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-        setMobileMenuOpen(false);
-      }
-      lastScrollY = window.scrollY;
+    if (window.scrollY < lastScrollY) {
+      setIsVisible(true);
+    } else {
+      setIsVisible(false);
+      setMobileMenuOpen(false);
     }
+    lastScrollY = window.scrollY;
   };
 
   useEffect(() => {
@@ -46,7 +39,7 @@ const Navbar: FC = () => {
         window.removeEventListener("scroll", handleScroll);
       };
     }
-  }, [isMobileMenuOpen]);
+  }, []);
 
   return (
     <header
@@ -55,18 +48,36 @@ const Navbar: FC = () => {
       }`}
     >
       <Link href="/">
-        <Image
-          src={LogoImage}
-          width={205}
-          height={50}
-          alt="synconia-logo"
-        ></Image>
+        <Image src={LogoImage} width={205} height={50} alt="logo"></Image>
       </Link>
       <div className="hidden gap-5 md:flex">
-        <Dropdown label="About us" options={aboutUsSelection} />
-        <Dropdown label="Product" options={productsServicesSelection} />
-        <Dropdown label="Our People" options={ourPeopleSelection} />
+        {NavbarData.map((menu, index) => (
+          <div
+            key={index}
+            className="relative w-full md:w-52"
+            onMouseEnter={() => toggleSubMenu(index)}
+            onMouseLeave={() => toggleSubMenu(index)}
+          >
+            <button className="text- w-full bg-transparent px-4 py-2 text-left text-lg focus:outline-none">
+              {menu.menu}
+            </button>
+            {openIndex === index && (
+              <div className="absolute left-0 z-10 mt-2 w-full rounded bg-white shadow-lg md:mt-0">
+                {menu.submenu.map((submenu, index) => (
+                  <HoverUnderline key={index}>
+                    <Link href={submenu.link}>
+                      <div className="cursor-pointer px-4 py-2 hover:bg-gray-100">
+                        {submenu.title}
+                      </div>
+                    </Link>
+                  </HoverUnderline>
+                ))}
+              </div>
+            )}
+          </div>
+        ))}
       </div>
+
       <div className="md:hidden">
         <button onClick={toggleMobileMenu} aria-label="Toggle menu">
           {isMobileMenuOpen ? <FiX size={30} /> : <FiMenu size={30} />}
