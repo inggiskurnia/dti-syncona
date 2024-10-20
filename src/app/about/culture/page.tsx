@@ -15,15 +15,15 @@ const Culture: FC = () => {
       <Hero
         desc="Culture"
         image={cultureHero}
-        bgColor="linear-gradient(to right, #951899, #0995D7)"
+        background="bg-gradient-to-r from-[#951899] to-[#0995D7]"
       />
 
       {cultureBanner1.map((banner, index) => (
         <Banner banner={banner} reverse={index % 2 === 0} key={index} />
       ))}
 
-      <section className="grid grid-cols-1 py-10 px-8 gap-10 md:grid-cols-2 md:py-20 md:px-64 bg-synconaltdGray text-white md:bg-[url('/background-culture.svg')] md:bg-cover md:bg-left">
-        <h1 className="text-3xl md:text-3xl text-center md:text-left">
+      <section className="grid grid-cols-1 gap-10 bg-synconaltdGray px-8 py-10 text-white md:grid-cols-2 md:bg-[url('/background-culture.svg')] md:bg-cover md:bg-left md:px-64 md:py-20">
+        <h1 className="text-center text-3xl md:text-left md:text-3xl">
           Our Values
         </h1>
         <div className="flex flex-col gap-5">

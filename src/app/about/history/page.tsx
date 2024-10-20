@@ -15,7 +15,7 @@ const History: FC = () => {
       <Hero
         desc="History"
         image={historyHero}
-        bgColor="linear-gradient(to right, #951899, #0995D7)"
+        background="bg-gradient-to-r from-[#951899] to-[#0995D7]"
       ></Hero>
       <Banner banner={historyBanner} reverse={true}></Banner>
 

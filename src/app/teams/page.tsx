@@ -26,14 +26,13 @@ const Teams: FC = () => {
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
 
-  console.log(data?.results);
   return (
     <>
       <Navbar />
       <Hero desc="Our People" image={bannerPic} />
 
-      <section className="flex flex-col md:flex-row py-20 px-5 md:px-40">
-        <div className="flex flex-col md:w-1/2 md:pr-10 mb-10 md:mb-0">
+      <section className="flex flex-col px-5 py-20 md:flex-row md:px-40">
+        <div className="mb-10 flex flex-col md:mb-0 md:w-1/2 md:pr-10">
           <Image
             src={bannerPic2}
             alt="banner"
@@ -46,7 +45,7 @@ const Teams: FC = () => {
             Our people are vital to our success
           </h1>
           <div className="space-y-3">
-            <h2 className="text-xl md:text-2xl font-bold">
+            <h2 className="text-xl font-bold md:text-2xl">
               An expert, multi-disciplinary team
             </h2>
             <p className="text-base md:text-lg">
@@ -60,7 +59,7 @@ const Teams: FC = () => {
             </p>
           </div>
           <div className="space-y-3">
-            <h2 className="text-xl md:text-2xl font-bold">
+            <h2 className="text-xl font-bold md:text-2xl">
               Attracting world-class talent
             </h2>
             <p className="text-base md:text-lg">
@@ -69,7 +68,7 @@ const Teams: FC = () => {
             </p>
           </div>
           <div className="space-y-3">
-            <h2 className="text-xl md:text-2xl font-bold">
+            <h2 className="text-xl font-bold md:text-2xl">
               An experienced and balanced board
             </h2>
             <p className="text-base md:text-lg">
@@ -81,8 +80,8 @@ const Teams: FC = () => {
         </div>
       </section>
 
-      <section className="py-20 px-5 md:px-56 bg-synconaltdLightGray">
-        <div className="grid grid-cols-1 md:grid-cols-2 mb-20">
+      <section className="bg-synconaltdLightGray px-5 py-20 md:px-56">
+        <div className="mb-20 grid grid-cols-1 md:grid-cols-2">
           <h1 className="text-2xl md:text-3xl">The Syncona team</h1>
           <h2 className="text-base md:text-xl">
             Please navigate below to see the members of the Syncona Investment
@@ -91,7 +90,7 @@ const Teams: FC = () => {
             Corporate Affairs, and Support functions.
           </h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-12">
+        <div className="grid grid-cols-1 gap-y-12 md:grid-cols-2 lg:grid-cols-4">
           {data?.results.map((user, index) => (
             <div key={index} className="flex flex-col items-center gap-3">
               <UserCard name={user.name} picture={user.picture} />
