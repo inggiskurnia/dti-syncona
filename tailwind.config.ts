@@ -20,17 +20,12 @@ const config: Config = {
         subject: ["SubjectRegular", "sans-serif"],
       },
       keyframes: {
-        marquee: {
-          "0%": { transform: "translateX(0)" },
-          "100%": { transform: "translateX(-100%)" },
-        },
         fill: {
           "0%": { width: "0%" },
           "100%": { width: "100%" },
         },
       },
       animation: {
-        marquee: "marquee 20s linear infinite",
         fill: "fill 5s linear forwards",
       },
     },
