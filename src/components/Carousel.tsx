@@ -65,9 +65,7 @@ const Carousel: React.FC<CarouselProps> = ({ heros }) => {
                     >
                       <div
                         className={`absolute left-0 top-0 h-full bg-synconaltdPink ${
-                          dotIndex === currentIndex
-                            ? "w-full transition-all duration-[5000ms]"
-                            : "w-0"
+                          dotIndex === currentIndex ? "animate-fill" : ""
                         }`}
                       ></div>
                     </button>

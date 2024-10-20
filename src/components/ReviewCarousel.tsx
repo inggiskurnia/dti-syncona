@@ -51,9 +51,7 @@ const ReviewCarousel: React.FC<ReviewCarouselProps> = ({ reviews }) => {
           >
             <button
               className={`absolute h-1 bg-synconaltdPink ${
-                index === currentIndex
-                  ? "w-full transition-all duration-[5000ms]"
-                  : "w-0"
+                index === currentIndex ? "animate-fill" : ""
               }`}
             />
           </div>
